@@ -6,6 +6,6 @@ import lombok.Data;
 public class SonProduct {
 
     private String id;
-    private String orderNum;
     private String epc;
+    private Product parent;
 }

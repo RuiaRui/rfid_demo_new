@@ -1,14 +1,13 @@
-package com.rfid.demo.dao;
+package com.rfid.demo.service;
 
 import com.rfid.demo.entity.Product;
 
 import java.util.List;
 
-/**
- *
- */
-public interface ProductDao {
-    int add(Product product);
+public interface ProductService {
+
+    int[] add(Product product);
+
 
     int update(Product product);
 
@@ -17,6 +16,4 @@ public interface ProductDao {
     Product findProductByOrder(String orderNum);
 
     List<Product> findAllProduct();
-
-
 }

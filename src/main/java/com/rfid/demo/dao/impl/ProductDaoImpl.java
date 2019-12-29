@@ -22,7 +22,7 @@ public class ProductDaoImpl implements ProductDao {
                         "VALUES (?,?,?,?,?,?,?); ",
         product.getOrderNum(),product.getName(),
                 product.getInventory(),product.getExpiration(),
-                product.getProductionDate(),product.getSpecification(),product.getQRUrl());
+                product.getProductionDate(),product.getSpecification(),product.getQrUrl());
 
 
 
@@ -35,7 +35,7 @@ public class ProductDaoImpl implements ProductDao {
                         " productionDate=?, specification=?, QRUrl=? WHERE orderNum=?",
                 product.getName(), product.getInventory(),product.getExpiration(),
                 product.getProductionDate(),product.getSpecification(),
-                product.getQRUrl(),
+                product.getQrUrl(),
                 product.getOrderNum());
     }
 

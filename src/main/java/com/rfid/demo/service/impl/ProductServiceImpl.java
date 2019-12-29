@@ -18,12 +18,13 @@ public class ProductServiceImpl implements ProductService {
     private SonProductDao sonProductDao;
 
     @Override
-    public int[] add(Product product) {
+    public int add(Product product) {
         int[] i=new int[2];
         i[0]=productDao.add(product);
         i[1]=sonProductDao.addSonProducts(product);
 
-        return i;
+        return i[0]+i[1];
+
     }
 
     @Override

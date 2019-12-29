@@ -12,6 +12,10 @@ public interface SonProductService {
 
     List<String> getAllSonProductId();
 
+    List<String> getAllEpc();
+
+    List<String> getAllBoundEpc();
+
 
     int addEPC(String EPC);
 

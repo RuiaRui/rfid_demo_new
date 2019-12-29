@@ -30,16 +30,21 @@ public class SonProductDaoImpl implements SonProductDao {
     }
 
     @Override
-    public List<Map<String, Object>>findSonProductByEPC() {
+    public List<Map<String, Object>> findSonProductByEPC() {
 
         return jdbcTemplate.queryForList("select * from (epc left join son_product using(id)) " +
-                "left join products using (orderNum);");
+                "left join products using (orderNum)");
 
     }
 
     @Override
     public List<String> getAllSonProductId() {
-        return jdbcTemplate.queryForList("select id from son_product；",String.class);
+        return jdbcTemplate.queryForList("select id from son_product",String.class);
+    }
+
+    @Override
+    public List<Map<String, Object>> getAllEpc() {
+        return jdbcTemplate.queryForList("select * from epc");
     }
 
     @Override

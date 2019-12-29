@@ -1,7 +1,6 @@
 package com.rfid.demo.service;
 
 import com.rfid.demo.entity.Product;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,10 +26,10 @@ class ProductServiceTest {
         product.setProductionDate(new Date(System.currentTimeMillis()));
         product.setExpiration(20);
         product.setSpecification("20l/kg");
-        product.setQRUrl("http://1234test.com");
+        product.setQrUrl("http://1234test.com");
 
-        int[] i=productService.add(product);
-        assertEquals(4,i[1]);
+        int i=productService.add(product);
+        assertEquals(5,i);
     }
 
     @Test
@@ -42,7 +41,7 @@ class ProductServiceTest {
         product.setProductionDate(new Date(System.currentTimeMillis()));
         product.setExpiration(20);
         product.setSpecification("20l/kg");
-        product.setQRUrl("http://1234test.com");
+        product.setQrUrl("http://1234test.com");
 
         int i=productService.update(product);
         assertEquals(1,i);
@@ -57,7 +56,7 @@ class ProductServiceTest {
         product.setProductionDate(new Date(System.currentTimeMillis()));
         product.setExpiration(20);
         product.setSpecification("20l/kg");
-        product.setQRUrl("http://1234test.com");
+        product.setQrUrl("http://1234test.com");
 
         productService.add(product);
 

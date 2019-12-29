@@ -16,6 +16,8 @@ public interface SonProductDao {
 
     List<String> getAllSonProductId();
 
+    List<Map<String, Object>> getAllEpc();
+
     int addEPC(String EPC);
 
     int alterEPC(String oldEPC,String newEPC);

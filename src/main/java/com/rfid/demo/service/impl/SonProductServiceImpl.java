@@ -36,7 +36,7 @@ public class SonProductServiceImpl implements SonProductService {
                 product.setOrderNum((String)map.get("orderNum"));
                 product.setName((String)map.get("name"));
                 product.setInventory((Integer)map.get("inventory"));
-                product.setQRUrl((String)map.get("QRUrl"));
+                product.setQrUrl((String)map.get("QRUrl"));
                 product.setExpiration((Integer)map.get("expiration"));
                 product.setSpecification((String)map.get("specification"));
                 product.setProductionDate((Date)map.get("productionDate"));
@@ -53,6 +53,30 @@ public class SonProductServiceImpl implements SonProductService {
     @Override
     public List<String> getAllSonProductId() {
         return sonProductDao.getAllSonProductId();
+    }
+
+    @Override
+    public List<String> getAllEpc() {
+        List<Map<String, Object>> mapList=sonProductDao.getAllEpc();
+        List<String> list=new ArrayList<>();
+        for (Map<String,Object> map:mapList) {
+            String s = (String) map.get("epc");
+            list.add(s);
+        }
+        return list;
+    }
+
+    @Override
+    public List<String> getAllBoundEpc() {
+        List<Map<String, Object>> mapList=sonProductDao.getAllEpc();
+        List<String> list=new ArrayList<>();
+        for (Map<String,Object> map:mapList) {
+            if(map.get("id")!=null){
+                String s = (String) map.get("epc");
+                list.add(s);
+            }
+        }
+        return list;
     }
 
     @Override

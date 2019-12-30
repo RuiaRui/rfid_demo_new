@@ -8,7 +8,7 @@ rfid inventory management . Spring boot web+jdbc
 
 ##### table products
 
-``` sql
+```sql
 CREATE TABLE products (
   orderNum varchar(50) NOT NULL DEFAULT '',
   name varchar(20) DEFAULT NULL,

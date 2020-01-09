@@ -39,5 +39,9 @@ public class Parameter {
 
     public static int maxSlot;
 
+    public static List<String> lastTimeSlotInfo;
+
+    public static List<Integer> lastTimeSlotStatus;
+
 
 }
